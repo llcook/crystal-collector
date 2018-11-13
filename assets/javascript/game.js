@@ -7,7 +7,7 @@ var randomNum = Math.floor(Math.random() * (120 - 19 +1)) + 19; // <--- between 
 
 $("#randomNum").text(randomNum);
 
-var userScore = 0;
+// var userScore = 0;
 var wins = 0;
 var losses = 0;
 
@@ -27,6 +27,8 @@ function makeCrystals () {
         div.attr("src", images[i]);
         div.attr("crystalVal", Math.floor(Math.random() * 12) + 1);
         $(".crystalContainer").append(div);
+        var userScore = 0;
+        $("#userScore").text(userScore);
     }
 }
 
@@ -36,11 +38,12 @@ function makeCrystals () {
 makeCrystals();
 
 $(".crystal").on("click", function () {
-    var crystalNum = (this).val();
-    console.log(crystalNum);
-    // $("userScore").text()
-    // console.log(this);
-    // console.log($(this)); // <-- can access .attr via jquery this
+    // $("userScore").html(crystalVal);
+    // var crystalNum = (this).val();
+    // console.log(crystalNum);
+    // // $("userScore").text()
+    console.log(this);
+    console.log($(this)); // <-- can access .attr via jquery this
 });
 
 });

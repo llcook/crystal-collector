@@ -12,20 +12,34 @@ body {
 h1 {
     font-family: 'Monoton', cursive;
     font-size: 48px;
+    margin: 30px;
     padding: 20px;
 }
 
 p {
     font-family: Arial, Helvetica, sans-serif;
-    margin: 10px;
-    padding: 20px;
+    margin: 30px;
+
 }
 
-#randomNum {
+#randomNum ,
+#userScore {
     background: linear-gradient(violet, aqua, lime);
     font-size: 64px;
     margin: 30px;
     padding: 50px;
+    text-align: center;
+    width: 120px;
+}
+
+#scoreHed {
+    background: lime;
+    font-size: 16px;
+    margin: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     text-align: center;
     width: 120px;
 }
