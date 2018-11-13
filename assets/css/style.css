@@ -6,42 +6,47 @@
 
 
 body {
-    background: papayawhip;
+    background: linear-gradient(maroon, violet, aqua, lime, yellow, indigo);
+    background-attachment: fixed;
+
 }
 
 h1 {
-    font-family: 'Monoton', cursive;
-    font-size: 48px;
+    font-family: 'Kumar One', cursive;
+    font-size: 82px;
     margin: 30px;
-    padding: 20px;
 }
 
 p {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Mallanna', sans-serif;
+    font-size: 24px;
     margin: 30px;
+    width: 60%;
 
 }
 
-#randomNum ,
+
+#randomNum,
 #userScore {
-    background: linear-gradient(violet, aqua, lime);
-    font-size: 64px;
-    margin: 30px;
-    padding: 50px;
+    float: left;
+    font-family: 'Kumar One', cursive;
+    font-size: 120px;
+    height: auto;
+    padding: 20px;
     text-align: center;
     width: 120px;
+}
+
+#userScore {
+    left: 100px;
+    position: relative;
 }
 
 #scoreHed {
-    background: lime;
-    font-size: 16px;
+    font-size: 48px;
     margin: 30px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    text-align: center;
-    width: 120px;
+
+    width: 100%;
 }
 
 #game-counter {
@@ -50,12 +55,13 @@ p {
 
 .crystal {
     float: left;
-    height: 100px;
+    height: 200px;
     margin: 10px;
     position: relative;
-    width: 100px;
+    width: auto;
 }
 
 .crystalContainer {
     margin: 20px;
 }
+

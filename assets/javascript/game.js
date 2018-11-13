@@ -1,50 +1,44 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
-// GLOBAL VARIABLES //////////////////////////////////////
-// =======================================================
+    var randomNum = Math.floor(Math.random() * (120 - 19 + 1)) + 19; // <--- between 19-120
 
-var randomNum = Math.floor(Math.random() * (120 - 19 +1)) + 19; // <--- between 19-120
+    $("#randomNum").text(randomNum);
 
-$("#randomNum").text(randomNum);
+    var userScore = "";
+    var wins = 0;
+    var losses = 0;
 
-// var userScore = 0;
-var wins = 0;
-var losses = 0;
+    // $("#wins").text(wins);
+    // ("#losses").text(losses);
 
-// $("#wins").text(wins);
-// ("#losses").text(losses);
+    function makeCrystals() {
 
-// FUNCTIONS /////////////////////////////////////////////
-// =======================================================
+        var images = ["assets/images/aqua-crystal.png", "assets/images/blue-crystal.png", "assets/images/clear-crystal.png", "assets/images/purple-crystal.png"];
 
-function makeCrystals () {
-
-    var images = ["assets/images/aqua-crystal.png", "assets/images/blue-crystal.png", "assets/images/clear-crystal.png", "assets/images/purple-crystal.png"];
-    
-    for (var i=0; i < images.length; i++) {
-        var div = $("<img>");
-        div.addClass("crystal");
-        div.attr("src", images[i]);
-        div.attr("crystalVal", Math.floor(Math.random() * 12) + 1);
-        $(".crystalContainer").append(div);
-        var userScore = 0;
-        $("#userScore").text(userScore);
+        for (var i = 0; i < images.length; i++) {
+            var div = $("<img>");
+            div.addClass("crystal");
+            div.attr("src", images[i]);0- 
+            div.attr("crystalVal", Math.floor(Math.random() * 12) + 1);
+            $(".crystalContainer").append(div);
+            var userScore = 0;
+            $("#userScore").text(userScore);
+        }
     }
-}
 
-// PROCESS ////////////////////////////////////////////////
-// ========================================================
+    makeCrystals();
 
-makeCrystals();
+    $(document).on("click", ".crystal", function () {  // ".document).on("click", "crystal","
+        console.log($(this).attr("crystalVal"));
 
-$(".crystal").on("click", function () {
-    // $("userScore").html(crystalVal);
-    // var crystalNum = (this).val();
-    // console.log(crystalNum);
-    // // $("userScore").text()
-    console.log(this);
-    console.log($(this)); // <-- can access .attr via jquery this
-});
+
+        // userScore += this.value;
+        // console.log(userScore);
+        // $("userScore").html(crystalVal);
+        // // // // $("userScore").text()
+        // console.log(this).attr(crystalVal);
+        // console.log($(this)); // <-- can access .attr via jquery this
+    });
 
 });
 
