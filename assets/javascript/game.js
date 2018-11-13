@@ -30,14 +30,7 @@ $(document).ready(function () {
 
     $(document).on("click", ".crystal", function () {  // ".document).on("click", "crystal","
         console.log($(this).attr("crystalVal"));
-
-
-        // userScore += this.value;
-        // console.log(userScore);
-        // $("userScore").html(crystalVal);
-        // // // // $("userScore").text()
-        // console.log(this).attr(crystalVal);
-        // console.log($(this)); // <-- can access .attr via jquery this
+        $("#userScore").text($(this).attr("crystalVal" + userScore));
     });
 
 });
