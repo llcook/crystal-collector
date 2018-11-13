@@ -1,6 +1,47 @@
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+body {
+    background: papayawhip;
+}
+
+h1 {
+    font-family: 'Monoton', cursive;
+    font-size: 48px;
+    padding: 20px;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+    padding: 20px;
+}
+
+#randomNum {
+    background: linear-gradient(violet, aqua, lime);
+    font-size: 64px;
+    margin: 30px;
+    padding: 50px;
+    text-align: center;
+    width: 120px;
+}
+
+#game-counter {
+    background: lime;
+}
+
 .crystal {
-    background: red;
+    float: left;
     height: 100px;
-    margin-right: 10px;
+    margin: 10px;
+    position: relative;
     width: 100px;
+}
+
+.crystalContainer {
+    margin: 20px;
 }

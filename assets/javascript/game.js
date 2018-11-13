@@ -1,13 +1,56 @@
-// global variables:
+$(document).ready(function() {
 
+// GLOBAL VARIABLES //////////////////////////////////////
+// =======================================================
+
+var randomNum = Math.floor(Math.random() * (120 - 19 +1)) + 19; // <--- between 19-120
+
+$("#randomNum").text(randomNum);
+
+var userScore = 0;
 var wins = 0;
 var losses = 0;
-var randomNum = Math.floor(Math.random() * (120 - 19 +1)) + 19; // <--- between 19-120
-var userScore = 0;
 
+// $("#wins").text(wins);
+// ("#losses").text(losses);
+
+// FUNCTIONS /////////////////////////////////////////////
+// =======================================================
+
+function makeCrystals () {
+
+    var images = ["assets/images/aqua-crystal.png", "assets/images/blue-crystal.png", "assets/images/clear-crystal.png", "assets/images/purple-crystal.png"];
+    
+    for (var i=0; i < images.length; i++) {
+        var div = $("<img>");
+        div.addClass("crystal");
+        div.attr("src", images[i]);
+        div.attr("crystalVal", Math.floor(Math.random() * 12) + 1);
+        $(".crystalContainer").append(div);
+    }
+}
+
+// PROCESS ////////////////////////////////////////////////
+// ========================================================
+
+makeCrystals();
+
+$(".crystal").on("click", function () {
+    var crystalNum = (this).val();
+    console.log(crystalNum);
+    // $("userScore").text()
+    // console.log(this);
+    // console.log($(this)); // <-- can access .attr via jquery this
+});
+
+});
+
+// PSEUDO-CODE
+// =========================================================
 
 // wins, losses, randomNum, userScore
 // also: array of image sources (to create four diff crystals; do it in a loop; can attach img src to crystal when created and simulate having loop; var images = ["assets/crystal1", "assets/crystal2"]); loop thru array.... create four divs and set bg img or set source to be index of array)
+// //if userscore exceeds or is equal to, call this function again, which restarts the game
 
 // FUNCTION 1 -- we make one so we only have one function to recall when we restart the game
 // set randomNum between 19-120 with Math.random
@@ -17,22 +60,6 @@ var userScore = 0;
 // add src
 // add crystal value as attribute
 // append image to screen
-
-
-// // example to make divs
-
-// function makeDiv() { // also add global variable for randomNum within this function, per Evan vid
-//     var array = [1, 2, 3, 4]; // can replace numbers w image sources
-//     for (var i=0; i < array.length; i++) {
-//         var div = $("<div>");
-//         div.addClass("crystal");
-//         div.attr("crystalVal", Math.floor(Math.random() * 13));
-//         $(".crystalContainer").append(div);
-//     }
-// }
-// //if userscore exceeds or is equal to, call this function again, which restarts the game
-
-// makeDiv();
 
 // // create click event on crystals (sim to calculator; create it on .crystal)
 // // use $(this)   .attr to capture value attribute; this hooks onto specific value per crystal
