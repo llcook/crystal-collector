@@ -1,12 +1,8 @@
 $(document).ready(function () {
 
-    var randomNum = Math.floor(Math.random() * (120 - 19 + 1)) + 19; // <--- between 19-120
-
-    $("#randomNum").text(randomNum);
-
+    var randomNum;
     var userScore = 0;
     var wins = 0;
-
 
     function makeCrystals() {
 
@@ -18,42 +14,37 @@ $(document).ready(function () {
             div.attr("src", images[i]); 0 -
                 div.attr("crystalVal", Math.floor(Math.random() * 12) + 1);
             $(".crystalContainer").append(div);
-            var userScore = 0;
-            $("#userScore").text(userScore);
-            $("#wins").text("Wins: " + wins);
-
+            $("#wins").text(wins);
         }
     }
 
-    makeCrystals();
+    function reset () {
+        randomNum = Math.floor(Math.random() * (120 - 19 + 1)) + 19; // <--- between 19-120
+        $("#randomNum").text(randomNum);
+        $(".crystalContainer").empty();
+        userScore = 0;
+        $("#userScore").text(userScore);
+        makeCrystals();
+    }
 
-    $(".crystal").on("click", function () {
+    reset();
+
+    $(".crystalContainer").on("click", ".crystal", function () {
 
         var crystalVal = ($(this).attr("crystalVal"));
         console.log(crystalVal);
 
-        // crystalVal = parseInt(crystalVal);
         userScore += parseInt(crystalVal);
         $("#userScore").text(userScore);
 
-        // var totalScore;
-
-        // for (var i = randomNum; i >= totalScore; i++) {
-
-        //     // var totalScore = userScore + counter;
-
-        //     totalScore = 
-        //     console.log(totalScore);
-
         if (userScore > randomNum) {
             alert("Game over!");
-            $(".crystalContainer").empty();
-            wins = 0;
-            makeCrystals();
+            reset();
         } else if (userScore === randomNum) {
             wins++;
-            $("#wins").text(wins);
+            $("#wins").text(wins); // if I win, it maintains the winning number and adds it to the next round
             alert("You win!");
+            reset();
         } else {
             totalScore =
                 $("#userScore").text(userScore);
