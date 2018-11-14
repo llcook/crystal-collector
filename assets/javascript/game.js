@@ -4,7 +4,7 @@ $(document).ready(function () {
 
     $("#randomNum").text(randomNum);
 
-    var userScore = "";
+    var userScore = 0;
     var wins = 0;
 
 
@@ -31,9 +31,9 @@ $(document).ready(function () {
         var crystalVal = ($(this).attr("crystalVal"));
         console.log(crystalVal);
 
-        crystalVal = parseInt(crystalVal);
-        userScore += crystalVal;
-        $("#userScore").html(userScore);
+        // crystalVal = parseInt(crystalVal);
+        userScore += parseInt(crystalVal);
+        $("#userScore").text(userScore);
 
         // var totalScore;
 
