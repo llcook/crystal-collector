@@ -41,6 +41,18 @@ p {
     position: relative;
 }
 
+#wins {
+    float: left;
+    font-family: 'Kumar One', cursive;
+    font-size: 40px;
+    height: auto;
+    left: 120px;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+    width: 180px;
+}
+
 #scoreHed {
     font-size: 48px;
     margin: 30px;

@@ -20,6 +20,7 @@ $(document).ready(function () {
             $(".crystalContainer").append(div);
             var userScore = 0;
             $("#userScore").text(userScore);
+            $("#wins").text("Wins: " + wins);
 
         }
     }
@@ -47,11 +48,12 @@ $(document).ready(function () {
         if (userScore > randomNum) {
             alert("Game over!");
             $(".crystalContainer").empty();
+            wins = 0;
             makeCrystals();
         } else if (userScore === randomNum) {
             wins++;
             $("#wins").text(wins);
-            makeCrystals();
+            alert("You win!");
         } else {
             totalScore =
                 $("#userScore").text(userScore);
