@@ -6,4 +6,8 @@ This JavaScript / jQuery game:
 * ...and assign random numbers and other attributes to each image
 * then adds the number values collected on each user click
 
-If the number reaches the goal number, the user wins. If the number surpasses the goal, it's a loss.
+If the number reaches the goal number, the user wins.
+
+If the number surpasses the goal, it's a loss.
+
+Wins are tallied until the page is refreshed!
